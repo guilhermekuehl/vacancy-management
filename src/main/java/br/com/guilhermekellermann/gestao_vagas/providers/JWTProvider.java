@@ -19,7 +19,7 @@ public class JWTProvider {
         Algorithm algorithm = Algorithm.HMAC256(secretKey);
 
         try {
-            var subject = JWT.require(null)
+            var subject = JWT.require(algorithm)
             .build()
             .verify(token)
             .getSubject();
