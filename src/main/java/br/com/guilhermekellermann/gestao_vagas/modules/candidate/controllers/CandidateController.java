@@ -3,7 +3,7 @@ package br.com.guilhermekellermann.gestao_vagas.modules.candidate.controllers;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.guilhermekellermann.gestao_vagas.modules.candidate.CandidateEntity;
-import br.com.guilhermekellermann.gestao_vagas.modules.candidate.useCases.CreateCandidateUseCases;
+import br.com.guilhermekellermann.gestao_vagas.modules.candidate.useCases.CreateCandidateUseCase;
 import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CandidateController {
 
     @Autowired
-    private CreateCandidateUseCases createCandidateUseCase;
+    private CreateCandidateUseCase createCandidateUseCase;
     
     @PostMapping("/")
     public ResponseEntity<Object> create(@Valid @RequestBody CandidateEntity candidateEntity) {
