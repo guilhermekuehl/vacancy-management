@@ -34,7 +34,7 @@ public class AuthCompanyUseCase {
     public AuthCompanyResponseDTO execute(AuthCompanyDTO authCompanyDTO) throws AuthenticationException {
         var company = this.companyRepository.findByUsername(authCompanyDTO.getUsername()).orElseThrow(
                 () -> {
-                    throw new UsernameNotFoundException("Username/passwor incorrect");
+                    throw new UsernameNotFoundException("Username/password incorrect");
                 });
         // Verificar a senha são iguais
         var passwordMatches = this.passwordEncoder.matches(authCompanyDTO.getPassword(), company.getPassword());
