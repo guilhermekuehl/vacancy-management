@@ -2,8 +2,6 @@ package br.com.guilhermekellermann.gestao_vagas.modules.candidate.useCases;
 
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 import java.util.Optional;
@@ -15,8 +13,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.junit.jupiter.api.Assertions;
-import org.assertj.core.api.AbstractObjectAssert;
 
 import br.com.guilhermekellermann.gestao_vagas.exceptions.JobNotFoundException;
 import br.com.guilhermekellermann.gestao_vagas.exceptions.UserNotFoundException;
