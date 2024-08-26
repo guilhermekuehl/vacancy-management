@@ -1,9 +1,8 @@
 package br.com.guilhermekellermann.gestao_vagas.modules.candidate.useCases;
 
-import static org.junit.jupiter.api.Assertions.assertInstanceOf;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
-import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Optional;
 import java.util.UUID;
