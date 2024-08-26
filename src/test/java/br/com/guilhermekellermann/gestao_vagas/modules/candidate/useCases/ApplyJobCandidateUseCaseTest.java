@@ -3,6 +3,7 @@ package br.com.guilhermekellermann.gestao_vagas.modules.candidate.useCases;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -44,7 +45,7 @@ public class ApplyJobCandidateUseCaseTest {
         try {
             applyJobCandidateUseCase.execute(null, null);
         } catch (Exception e) {
-            assertInstanceOf(UserNotFoundException.class, e);
+            assertThat(e).isInstanceOf(UserNotFoundException.class);
         }
     }
 
@@ -60,7 +61,7 @@ public class ApplyJobCandidateUseCaseTest {
         try {
             applyJobCandidateUseCase.execute(idCandidate, null);
         } catch (Exception e) {
-            assertInstanceOf(JobNotFoundException.class, e);
+            assertThat(e).isInstanceOf(JobNotFoundException.class);
         }
     }
 
@@ -82,6 +83,7 @@ public class ApplyJobCandidateUseCaseTest {
 
         var result = applyJobCandidateUseCase.execute(idCandidate, idJob);
 
+        assertThat(result).hasFieldOrProperty("id");
         assertNotNull(result.getId());
     }
 
