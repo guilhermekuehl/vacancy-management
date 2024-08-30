@@ -34,3 +34,13 @@ jobs:
                 file: ./Dockerfile
                 push: true
                 tags: guilhermekuehl/gestao_vagas
+    deploy:
+        needs: build
+        runs-on: self-hosted
+        steps:
+            - name: Pull image docker hub
+              run: docker pull guilhermekuehl/gestao_vagas:latest
+            - name: remove container
+              run: Run docker container gestao-vagas
+            - name: Run docker container
+              run: docker run -d -p 8080:8080 -e DATABASE_URL=${{secrets.DATABASE_URL}} -e DATABASE_PASSWORD=${{secrets.DATABASE_PASSWORD}} -e DATABASE_USERNAME=${{secrets.DATABASE_USERNAME}} --name gestao-vagas guilhermekuehl/gestao_vagas
