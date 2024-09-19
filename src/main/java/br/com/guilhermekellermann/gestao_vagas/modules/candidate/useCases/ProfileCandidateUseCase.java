@@ -24,6 +24,7 @@ public class ProfileCandidateUseCase {
         var candidateDTO = ProfileCandidateResponseDTO.builder()
                 .description(candidate.getDescription())
                 .username(candidate.getUsername())
+                .name(candidate.getName())
                 .email(candidate.getEmail())
                 .id(candidate.getId())
                 .build();
